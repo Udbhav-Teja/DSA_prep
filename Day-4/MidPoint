@@ -1,20 +1,25 @@
-//Neeed to take inputs from user....
-import java.io.*;
-//import java.util.*;
+import java.util.Scanner;
 
 public class MidPoint {
-    public static void main (String[] args) {
-        //Scanner x1 = new scanner(System.in);
-        //System.out.println("Enter the values for x1,x2,y1,y2: ");
-		
-		int x1 =2, y1 = 4 ;
-		int x2 = 10, y2 = 15 ;
-		midpoint(x1, x2, y1, y2);
-			
-	}
-	 public static void midpoint(int x1, int x2, int y1, int y2) {
-		System.out.print((x1 + x2) / 2 +
-						" , " + (y1 + y2) / 2) ;
-	}
-	
+    
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("The value of x1: ");
+        float x1 = sc.nextFloat();
+        System.out.print("The value of y1: ");
+        float y1 = sc.nextFloat();
+        System.out.print("The value of x2: ");
+        float x2 = sc.nextFloat();
+        System.out.print("The value of y2: ");
+        float y2 = sc.nextFloat();
+
+        float x_m_point = (x1 + x2)/2;
+        float y_m_point = (y1 + y2)/2;
+        
+        
+        System.out.println("The midpoint of line is :");
+        System.out.println("The midpoint's x value is: " + x_m_point);
+        System.out.println("The midpoint's y value is: " + y_m_point);
+
+    }
 }
