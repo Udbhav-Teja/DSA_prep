@@ -1,6 +1,8 @@
 import java.util.Scanner;
-public class SimpleIntrest {
+
+public class DiscountAmount {
     public static void main(String args[]) {
+        
         Scanner sc = new Scanner(System.in);
         float p, r, t, si, Amount, Discount, TotalAmount;
         System.out.print("Enter the Principal : ");
@@ -15,9 +17,6 @@ public class SimpleIntrest {
         si = (p * r * t) / 100;
         Amount = si + p;
         System.out.println("Total Amount is: " +Amount);
-        
-        
-        
         TotalAmount = Amount - (si*Discount);
         System.out.println("Total Amount to be paid is: " + TotalAmount);
         
