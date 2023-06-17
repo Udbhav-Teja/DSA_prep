@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class SimpleIntrest {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        float p, r, t, si, Amount, Discount, TotalAmount;
+        System.out.print("Enter the Principal : ");
+        p = sc.nextFloat();
+        System.out.print("Enter the Rate of interest : ");
+        r = sc.nextFloat();
+        System.out.print("Enter the Time period : ");
+        t = sc.nextFloat();
+        System.out.print("Special Discount Percentage: ");
+        Discount = sc.nextFloat();
+        sc.close();
+        si = (p * r * t) / 100;
+        Amount = si + p;
+        System.out.println("Total Amount is: " +Amount);
+        
+        
+        
+        TotalAmount = Amount - (si*Discount);
+        System.out.println("Total Amount to be paid is: " + TotalAmount);
+        
+    }
+}
