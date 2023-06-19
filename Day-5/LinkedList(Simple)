@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.LinkedList;
+
+public class LinkedList {
+    
+	public static void main(String args[]) {
+	
+		LinkedList<String> list = new LinkedList<String>();
+		list.add("4");
+		list.add("7");
+		list.add("92");
+		list.add("10");
+		list.add("24");
+		System.out.println("LinkedList:" + list);
+		System.out.println(
+			"The size of the linked list is: "
+			+ list.size());
+	}
+}
