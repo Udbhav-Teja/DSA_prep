@@ -1,0 +1,65 @@
+public class MyLinkedList {
+    public class Node {
+         int data;
+         Node next;
+    }
+    public Node head;
+    public Node tail;
+
+    public int size;
+    public int getfirst() throws Exception {
+         if (this.size == 0) {
+             throw new Exception("linked list is empty");
+         }
+         return this.head.data;
+    }
+    public int RemoveFirst() throws Exception {
+         if (this.size == 0) {
+             throw new Exception("LL is empty");
+         }
+         Node temp = this.head;
+         if (this.size == 1) {
+             this.head = null;
+             this.tail = null;
+             size = 0;
+         } 
+         else {
+             this.head = this.head.next;
+             this.size--;
+         }
+         return temp.data;
+    }
+    public void addFirst(int item) {
+         Node nn = new Node();
+         nn.data = item;
+         if (this.size == 0) {
+             this.head = nn;
+             this.tail = nn;
+             this.size = this.size + 1;
+         } 
+         else {
+             nn.next = this.head;
+             this.head = nn;
+             this.size = this.size + 1;
+         }
+    }
+    public int lengthUsingRecursiveApproach (){
+         return lengthUsingRecursiveApproach(this.head);
+    }
+    private int lengthUsingRecursiveApproach(Node curr) {
+         if (curr == null) {
+             return 0;
+         }
+         return 1 + lengthUsingRecursiveApproach (curr.next);
+    }
+    public static void main(String[] args) {
+
+         MyLinkedList ll = new MyLinkedList();
+        ll.addFirst(10);
+         ll.addFirst(20);
+         ll.addFirst(30);
+         ll.addFirst(40);
+         ll.addFirst(50);
+         System.out.println("Recursive Approach length " + ll.lengthUsingRecursiveApproach(ll.head));
+    }
+}
