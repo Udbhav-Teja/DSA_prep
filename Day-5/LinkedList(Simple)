@@ -12,8 +12,6 @@ public class LinkedList {
 		list.add("10");
 		list.add("24");
 		System.out.println("LinkedList:" + list);
-		System.out.println(
-			"The size of the linked list is: "
-			+ list.size());
+		System.out.println("The size of the linked list is: " + list.size());
 	}
 }
