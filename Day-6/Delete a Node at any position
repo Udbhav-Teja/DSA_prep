@@ -1,0 +1,86 @@
+import java.lang.*;
+
+class LinkedList {
+    Node head;
+    int size = 0;
+    // Node Class
+    class Node{
+        int data;
+        Node next;
+
+        Node(int x) {
+            data = x;
+            next = null;
+        }
+    }
+    public void insert(int data) {
+        Node new_node = new Node(data);
+
+        new_node.data = data;
+        new_node.next = head;
+        head = new_node;
+        size++;
+    }
+    public void deletePosition(int pos) {
+        Node temp = head;
+        Node prevNode = null;
+
+        if(pos < 1 || pos > size) {
+            System.out.println("Invalid\n");
+            return;
+        }
+
+        // delete the 1st node
+        if(pos == 1) {
+            head = head.next;
+            System.out.println("Deleted: " + temp.data);
+            size--;
+            return;
+        }
+
+        // traverse to the pos'th node
+        while (--pos > 0)
+        {
+            prevNode = temp;
+            temp = temp.next;
+        }
+        // change prevNode node's next node to nth node's next node
+        prevNode.next = temp.next;
+        // delete this nth node
+        System.out.println("Deleted: " + temp.data);
+        size--;
+    }
+
+    public void display() {
+        System.out.print("Linked List : ");
+
+        Node node = head;
+        // as linked list will end when Node is Null
+        while(node!=null){
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+        System.out.println();
+    }
+}
+    public class Main {
+    public static void main(String args[]) {
+        LinkedList linked_list = new LinkedList();
+
+        linked_list.insert(5);
+        linked_list.insert(4);
+        linked_list.insert(3);
+        linked_list.insert(2);
+        linked_list.insert(1);
+
+        linked_list.display();
+
+        // deletes the 2nd node
+        linked_list.deletePosition(2);
+        linked_list.display();
+
+        // deletes the 3rd node
+        linked_list.deletePosition(3);
+        linked_list.display();
+    }
+}
