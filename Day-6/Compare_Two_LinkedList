@@ -1,0 +1,14 @@
+import java.util.LinkedList;
+public class CompareTwoLinkedList {
+   public static void main(String[] args) {
+      LinkedList<String> l = new LinkedList<String>();
+      l.add("Apple");
+      l.add("Mango");
+      l.add("Orange");
+      l.add("Guava");
+      System.out.println("The LinkedList is: " + l);
+      l.removeFirst();
+      l.removeLast();
+      System.out.println("The LinkedList is: " + l);
+   }
+}
