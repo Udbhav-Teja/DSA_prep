@@ -1,0 +1,30 @@
+//still pending
+
+import java.util.*;
+
+public class bece {
+    public static void main (String args[]) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Enter five Elements for an array: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
+        int e = sc.nextInt();
+        
+        System.out.println("The obtained Array is: ["+a+","+b+","+c+","+d+","+e+"]");
+        System.out.println("Enter the position you want to change the value: ");
+        int i = sc.nextInt();
+        
+        for (int j = 0; j < 5; j++) {
+            if(i>5) {
+            System.out.println("Invalid Position.");
+            }
+            else {
+                
+                System.out.println("The updated Array is: ["+a+","+b+","+c+","+d+","+e+"]");
+            }
+            
+        }
+    }
+}
