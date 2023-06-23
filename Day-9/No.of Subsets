@@ -1,0 +1,71 @@
+import java.io.*;
+import java.util.*;
+
+public class noofSubsets {
+	static int upper_bound(List<Integer> arr, int key)
+	{
+		int upperBound = 0;
+		while (upperBound < arr.size()) {
+			if (arr.get(upperBound) <= key) {
+				upperBound++;
+			}
+			else {
+				return arr.get(upperBound);
+			}
+		}
+		return -1;
+	}
+	static int findSubset(int[] arr, int n, int k) {
+		List<Integer> vect1 = new ArrayList<>();
+		List<Integer> vect2 = new ArrayList<>();
+		List<Integer> subset1 = new ArrayList<>();
+		List<Integer> subset2 = new ArrayList<>();
+		for (int i = 0; i < n; i++) {
+			if (arr[i] > k) {
+				continue;
+			}
+			if (i <= n / 2) {
+				vect1.add(arr[i]);
+			}
+			else {
+				vect2.add(arr[i]);
+			}
+		}
+		for (int i = 0; i < (1 << vect1.size()); i++) {
+			int value = 1;
+			for (int j = 0; j < vect1.size(); j++) {
+				if ((i & (1 << j)) != 0) {
+					value *= vect1.get(j);
+				}
+			}
+			if (value <= k) {
+				subset1.add(value);
+			}
+		}
+		for (int i = 0; i < (1 << vect2.size()); i++) {
+			int value = 1;
+			for (int j = 0; j < vect2.size(); j++) {
+				if ((i & (1 << j)) != 0) {
+					value *= vect2.get(j);
+				}
+			}
+			if (value <= k) {
+				subset2.add(value);
+			}
+		}
+		Collections.sort(subset2);
+		int count = 0;
+		for (int i = 0; i < subset1.size(); i++) {
+			count += upper_bound(subset2,
+								(k / subset1.get(i)));
+		}
+		count--;
+		return count;
+	}
+	public static void main(String[] args) {
+		int[] arr = { 4, 2, 3, 5 };
+		int n = arr.length;
+		int k = 25;
+		System.out.print(findSubset(arr, n, k));
+	}
+}
