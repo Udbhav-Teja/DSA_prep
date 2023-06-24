@@ -1,5 +1,3 @@
-// Java program to demonstrate factory method design pattern
-
 enum VehicleType {
 	VT_TwoWheeler,
 	VT_ThreeWheeler,
