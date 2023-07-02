@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class FuelConsumption {
+    public static void main (String args[]) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Enter the quantity of Diesel to fill up the tank: ");
+        float km = sc.nextFloat();
+        float miles = (float)(0.6214 * km);
+        
+        System.out.println("Enter the quantity to fill up the tank: ");
+        float lit = sc.nextFloat();
+        float galon = (float)(0.2642 * lit);
+        
+        // we can use both the statments like "%.2f" or "String.format()" to round off the values.
+        
+        System.out.printf("%.2f Euantity in miles: ",miles);
+        System.out.println(String.format ("Euantity in galon: "+ galon));
+    }
+}
