@@ -1,0 +1,52 @@
+public class SetMatrixZeros {
+    private static void setZeros(int[][] matrix, int n, int m) {
+        int answer[][] = new int[n][m];
+        //set all elements of the array as 1  
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                answer[i][j] = 1;
+            }
+        }
+        //traversing over matrix row wise  
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++)  {
+                if (matrix[i][j] == 0) {
+                    // Set this row as zero in answer array  
+                    for (int k = 0; k < m; k++) {
+                        answer[i][k] = 0;
+                    }
+                    break;
+                }
+            }
+        }
+        //traversing over matrix column wise
+        for (int j = 0; j < m; j++) {
+            for (int i = 0; i < n; i++) {
+                if (matrix[i][j] == 0) {
+                    for (int k = 0; k < n; k++) {
+                        answer[k][j] = 0;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (answer[i][j] == 0) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+    public static void main(String args[]) {
+       int[][] matrix = new int[][] {{ 1,  6,  3}, { 1,  8,  9}, { 6,  2,  0}};
+       int  n = matrix.length;
+       int m = matrix[0].length;
+       setZeros(matrix, n, m);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
