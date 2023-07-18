@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Enter the no.of copies sold: ");
+        int a = sc.nextInt();
+        System.out.println("Enter the cost per copy: ");
+        int b = sc.nextInt();
+        System.out.println("Money spent per copy: ");
+        int c = sc.nextInt();
+        
+        System.out.println("Storage cost for all copies: 100");
+        
+        int p =((a*b) - (a*c))-100;
+        System.out.println(p);
+
+    }
+}
