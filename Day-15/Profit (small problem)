@@ -17,3 +17,15 @@ public class main {
 
     }
 }
+
+***(OR)***
+
+public class main {
+    public static void main (String args[]) {
+        int a = 1000;
+        int b = 2;
+        int c  = 1;
+        int p =((a*b) - (a*c))-100;
+        
+    }
+}
