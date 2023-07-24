@@ -1,0 +1,25 @@
+java program for Max no of 1's in a binary num if one of the 0's is flipped
+import java.util.*;
+
+public class main {
+    public static void main (String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = 27;
+
+        int curr=0,prev=0,max=0;
+        while (n!=0) {
+            if ((n&1) == 1) {
+                curr++;
+            }
+            if ((n&1)==0) {
+                prev = ((n&2)==0)?0:curr;
+                curr=0;
+            }
+            max = Math.max(prev+curr,max);
+            n = n>>1;
+        }
+        System.out.println(max+1);
+    }
+}
+
+//Time complixety = log(n)
