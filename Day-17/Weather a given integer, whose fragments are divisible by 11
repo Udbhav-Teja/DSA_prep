@@ -1,0 +1,23 @@
+java program to a given integer, whose fragments are divisible by 11
+import java.util.Scanner;
+
+public class main {
+    public static void main (String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();       //55112203 intput
+        String s = String.valueOf(n);
+        int sum;
+        
+        for (int i = 0; i<s.length();i++) {
+            sum = s.charAt(i)-'0';
+            for (int j = i+1; j<s.length();j++) {    //fragmenting
+                sum = sum*10+s.charAt(j)-'0';
+                if (sum%11 == 0) {
+                    System.out.println(sum);
+                }
+            }
+        }
+    }
+}
+
+//(n)^2 Time complixety
