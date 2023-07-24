@@ -1,0 +1,29 @@
+//java program to get a string input and make it a palindrome and print the least no of elements used to acheive this.
+//let "abcd" be input then output is "cba"
+import java.util.*;
+
+public class main {
+    static boolean minString (String s, int i, int j) {
+        while (i<j) {
+            if (s.charAt(i)!=s.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+    public static void main (String args[]) {
+        Scanner sc = new Scanner (System.in);
+        String s = sc.next();
+        int i;
+        for (i = 0; i<s.length(); i++) {
+            if (minString(s,i,s.length()-1)) {
+                break;
+            }
+        }
+        for (int j = i-1; j >= 0; j--) {
+            System.out.println(s.charAt(j));
+        }
+    }
+}
